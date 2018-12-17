@@ -27,3 +27,7 @@ allResolvers: any
 mergedTypes: any
 mergedResolvers: any
 으로 할것.
+
+1.8
+yarn add graphql-to-typescript gql-merge --dev
+yarn add babel-runtime --dev
