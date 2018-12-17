@@ -17,3 +17,13 @@ yarn add morgan helmet cors
  - helmet: 보안
  - cors: ?
 yarn add @types/margan @types/helmet @types/cors --dev
+
+1.6
+yarn add graphql-tools merge-graphql-schemas
+
+1.7
+allTypes: any
+allResolvers: any
+mergedTypes: any
+mergedResolvers: any
+으로 할것.
