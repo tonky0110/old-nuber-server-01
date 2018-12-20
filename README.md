@@ -31,3 +31,6 @@ mergedResolvers: any
 1.8
 yarn add graphql-to-typescript gql-merge --dev
 yarn add babel-runtime --dev
+
+api: graphql에서 query, mutation, subscription을 호출하고, 해당 return값을 설정하는 것.
+entities: typeorm에서 nodejs의 값과 dbms의 table을 맵핑해 주는것.
