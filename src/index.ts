@@ -1,7 +1,10 @@
+import dotenv from 'dotenv';
 import { Options } from 'graphql-yoga';
 import { createConnection } from 'typeorm';
 import app from './app';
 import connectionOption from './ormConfig';
+
+dotenv.config(); // console.log(process.env);
 
 const PORT: number | string = process.env.PORT || 4000;
 const PLAYGROUND: string = "/playground";
@@ -17,5 +20,5 @@ const handleAppStart = () => console.log(`Listening on port ${PORT}`);
 
 createConnection(connectionOption).then(() => {
     app.start(appOptions, handleAppStart);
-});
+}).catch(error => console.log(error));
 
