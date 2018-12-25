@@ -1,11 +1,11 @@
-import {IsEmail} from 'class-validator';
-import { 
-    BaseEntity, 
-    Column ,
-    CreateDateColumn,
-    Entity, 
-    PrimaryGeneratedColumn,
-    UpdateDateColumn,
+import { IsEmail } from "class-validator";
+import {
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
 } from "typeorm";
 
 @Entity()
@@ -47,7 +47,7 @@ class User extends BaseEntity {
   @Column({ type: "boolean", default: false })
   isRiding: boolean;
 
-    @Column({ type: "boolean", default: false })
+  @Column({ type: "boolean", default: false })
   isTaken: boolean;
 
   @Column({ type: "double precision", default: 0 })
