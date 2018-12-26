@@ -45,6 +45,8 @@ type Ride {
   dropOffLat: Float!
   dropOffLng: Float!
   price: Float!
+  driver: User!
+  passenger: User!
   duration: String!
   createdAt: String!
   updatedAt: String
@@ -61,8 +63,6 @@ type User {
   phoneNumber: String
   verifiedPhoneNumber: Boolean!
   profilePhoto: String
-  createAt: String!
-  updatedAt: String
   fullName: String
   isDriving: Boolean!
   isRiding: Boolean!
@@ -70,6 +70,13 @@ type User {
   lastLng: Float
   lastLat: Float
   lastOrientation: Float
+  chat: Chat
+  messages: [Message]
+  verifications: [Verification]
+  ridesAsPassenger: [Ride]
+  ridesAsDriver: [Ride]
+  createAt: String!
+  updatedAt: String
 }
 
 type Verification {
@@ -78,6 +85,7 @@ type Verification {
   payload: String!
   key: String!
   used: Boolean!
+  user: User!
   createdAt: String!
   updatedAt: String
 }
