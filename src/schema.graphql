@@ -11,8 +11,24 @@ type Place {
 
 type Query {
   place: Place
+  ride: Ride
   user: User
   verification: Verification
+}
+
+type Ride {
+  id: Int!
+  status: String!
+  pickUpAddress: String!
+  pickUpLat: Float!
+  pickUpLng: Float!
+  dropOffAddress: String!
+  dropOffLat: Float!
+  dropOffLng: Float!
+  price: Float!
+  duration: String!
+  createdAt: String!
+  updatedAt: String
 }
 
 type User {
