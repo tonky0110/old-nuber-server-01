@@ -1,3 +1,20 @@
+type Place {
+  id: Int!
+  name: String!
+  lat: Float!
+  lng: Float!
+  address: String!
+  isFav: Boolean!
+  createdAt: String!
+  updatedAt: String
+}
+
+type Query {
+  place: Place
+  user: User
+  verification: Verification
+}
+
 type User {
   id: Int!
   email: String
@@ -20,11 +37,6 @@ type User {
   lastOrientation: Float
 }
 
-type Query {
-  user: User
-  verification: Verification
-}
-
 type Verification {
   id: Int!
   target: String!
@@ -32,5 +44,5 @@ type Verification {
   key: String!
   used: Boolean!
   createdAt: String!
-  updatedAt: String!
+  updatedAt: String
 }
