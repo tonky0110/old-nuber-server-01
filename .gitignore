@@ -79,3 +79,9 @@ typings/
 .dynamodb/ 
 
 package-lock.json
+
+videos 
+
+uploads
+
+static
