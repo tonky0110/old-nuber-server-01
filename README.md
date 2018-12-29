@@ -56,13 +56,13 @@ User story
 - [x] Email로 로그인
 - [x] 전화번호로 인증 요청
 - [x] 전화번호로 인증 확인
-- [ ] Email로 회원가입
+- [x] Email로 회원가입
 
 ---
 
 ### Authentication(인증)
 
-- [ ] JWT 생성
+- [x] JWT 생성
 - [ ] JWT 검증
 
 ---
@@ -95,3 +95,5 @@ Ride story
 - [ ] Ride요청 history보기
 - [ ] Ride 상세보기
 - [ ]
+
+JWT - JSON Web Token(1.41 createJWT강의 참조)
