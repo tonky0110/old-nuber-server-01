@@ -55,15 +55,20 @@ User story
 - [x] Facebook으로 로그인/회원가입
 - [x] Email로 로그인
 - [x] 전화번호로 인증 요청
-- [ ] 전화번호로 인증 확인
+- [x] 전화번호로 인증 확인
 - [ ] Email로 회원가입
+
+---
+
+### Authentication(인증)
+
+- [ ] JWT 생성
+- [ ] JWT 검증
 
 ---
 
 ### Private Resolvers:
 
-- [ ] JWT 생성
-- [ ] JWT 검증
 - [ ] Email 검증하기
 - [ ] 나의 profile 받기
 - [ ] 나의 profile 수정
