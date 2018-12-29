@@ -1,23 +1,20 @@
 type Chat {
   id: Int!
-  messages: [Message]!
-  participants: [User]!
+  messages: [Message]
+  passengerId: Int!
+  passenger: User!
+  driverId: Int
+  driver: User!
+  rideId: Int
+  ride: Ride!
   createdAt: String!
   updatedAt: String
-}
-
-type Query {
-  chat: Chat
-  message: Message
-  place: Place
-  ride: Ride
-  user: User
-  verification: Verification
 }
 
 type Message {
   id: Int!
   text: String!
+  chatId: Int
   chat: Chat!
   user: User!
   createdAt: String!
@@ -31,6 +28,8 @@ type Place {
   lng: Float!
   address: String!
   isFav: Boolean!
+  userId: Int!
+  user: User!
   createdAt: String!
   updatedAt: String
 }
@@ -45,11 +44,27 @@ type Ride {
   dropOffLat: Float!
   dropOffLng: Float!
   price: Float!
-  driver: User!
-  passenger: User!
+  distance: String!
   duration: String!
+  driverId: Int
+  driver: User!
+  passengerId: Int!
+  passenger: User!
+  chat: Chat
+  chatId: Int
   createdAt: String!
   updatedAt: String
+}
+
+type EmailSignInResponse {
+  ok: Boolean!
+  error: String
+  token: String
+}
+
+type Mutation {
+  emailSignIn(email: String!, password: String!): EmailSignInResponse!
+  FacebookConnect(firstName: String!, lastName: String!, email: String, fbId: String!): FacebookConnectResponse!
 }
 
 type FacebookConnectResponse {
@@ -58,16 +73,12 @@ type FacebookConnectResponse {
   token: String
 }
 
-type Mutation {
-  FacebookConnect(firstName: String!, lastName: String!, email: String, fbId: String!): FacebookConnectResponse!
-}
-
 type User {
   id: Int!
   email: String
   verifiedEmail: Boolean!
   firstName: String!
-  nastName: String!
+  lastName: String!
   age: Int
   password: String
   phoneNumber: String
@@ -80,13 +91,14 @@ type User {
   lastLng: Float
   lastLat: Float
   lastOrientation: Float
-  chat: Chat
-  messages: [Message]
-  verifications: [Verification]
   fbId: String
+  messages: [Message]
   ridesAsPassenger: [Ride]
   ridesAsDriver: [Ride]
-  createAt: String!
+  chatsAsDriver: [Chat]
+  chatsAsPassenger: [Chat]
+  places: [Place]
+  createdAt: String!
   updatedAt: String
 }
 
@@ -99,4 +111,8 @@ type Verification {
   user: User!
   createdAt: String!
   updatedAt: String
+}
+
+type Query {
+  verification: Verification
 }
