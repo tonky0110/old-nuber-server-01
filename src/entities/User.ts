@@ -98,12 +98,20 @@ class User extends BaseEntity {
   }
 
   public comparePassword(password: string): Promise<boolean> {
+    console.log(
+      "comparePassword - ",
+      "input password:",
+      password,
+      ", saved password:",
+      this.password
+    );
     return bcrypt.compare(password, this.password);
   }
 
   @BeforeInsert()
   @BeforeUpdate()
   async savePassword(): Promise<void> {
+    console.log("this.password:", this.password);
     if (this.password) {
       const hashedPassword = await this.hashPassword(this.password);
       this.password = hashedPassword;
