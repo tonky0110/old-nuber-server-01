@@ -53,8 +53,8 @@ User story
 ### Public Resolvers:
 
 - [x] Facebook으로 로그인/회원가입
-- [ ] Email로 로그인
-- [ ] 전화번호로 인증 요청
+- [x] Email로 로그인
+- [x] 전화번호로 인증 요청
 - [ ] 전화번호로 인증 확인
 - [ ] Email로 회원가입
 
