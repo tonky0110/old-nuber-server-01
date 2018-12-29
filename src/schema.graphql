@@ -117,6 +117,11 @@ type User {
   updatedAt: String
 }
 
+type Query {
+  user: User
+  verification: Verification
+}
+
 type StartPhoneVerificationResponse {
   ok: Boolean!
   error: String
@@ -130,8 +135,4 @@ type Verification {
   verified: Boolean!
   createdAt: String!
   updatedAt: String
-}
-
-type Query {
-  verification: Verification
 }
