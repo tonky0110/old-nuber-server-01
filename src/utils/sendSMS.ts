@@ -1,5 +1,5 @@
 import Twilio from "twilio";
-import twilio = require("twilio");
+
 const twilioClient = Twilio(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
 
 export const sendSMS = (to: string, body: string) => {
