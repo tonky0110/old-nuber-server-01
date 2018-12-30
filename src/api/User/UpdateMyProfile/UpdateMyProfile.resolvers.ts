@@ -15,12 +15,12 @@ const resolvers: Resolvers = {
         { req }
       ): Promise<UpdateMyProfileResponse> => {
         const user: User = req.user;
-        const notNull = {};
-        Object.keys(args).forEach(key => {
-          if (args[key] !== null) {
-            notNull[key] = args[key];
-          }
-        });
+        const notNull: any = cleanNullArgs(args);
+        if (notNull.password !== null) {
+          user.password = notNull.password;
+          user.save();
+          delete notNull.password;
+        }
         try {
           await User.update({ id: user.id }, { ...notNull });
           return {
