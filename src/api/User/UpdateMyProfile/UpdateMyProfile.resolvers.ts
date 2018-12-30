@@ -1,10 +1,10 @@
-import { Resolvers } from "src/types/resolvers";
-import privateResolver from "src/utils/privateResolver";
+import User from "../../../entities/User";
 import {
   UpdateMyProfileMutationArgs,
   UpdateMyProfileResponse
-} from "src/types/graph";
-import User from "src/entities/User";
+} from "../../../types/graph";
+import { Resolvers } from "../../../types/resolvers";
+import privateResolver from "../../../utils/privateResolver";
 
 const resolvers: Resolvers = {
   Mutation: {
@@ -15,8 +15,18 @@ const resolvers: Resolvers = {
         { req }
       ): Promise<UpdateMyProfileResponse> => {
         const user: User = req.user;
-
+        const notNull = {};
+        Object.keys(args).forEach(key => {
+          if (args[key] !== null) {
+            notNull[key] = args[key];
+          }
+        });
         try {
+          await User.update({ id: user.id }, { ...notNull });
+          return {
+            ok: true,
+            error: null
+          };
         } catch (error) {
           return {
             ok: false,
