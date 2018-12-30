@@ -69,11 +69,11 @@ User story
 
 ### Private Resolvers:
 
-- [ ] Email 검증하기
+- [x] Email 검증하기
 - [x] 나의 profile 받기
-- [ ] 나의 profile 수정
-- [ ] driving상태 변경
-- [ ] 나의 장소/방향 보고(report)하기
+- [x] 나의 profile 수정
+- [ ] 운전모드 전환(toggle driving mode)
+- [ ] report location(위치정보 보내기(계속-subscription))
 - [ ] 장소 추가하기
 - [ ] 장소 수정하기
 - [ ] 장소 삭제하기
