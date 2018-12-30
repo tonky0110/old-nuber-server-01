@@ -100,3 +100,8 @@ JWT - JSON Web Token(1.41 createJWT강의 참조)
 
 context - express server가 가지고 있는 정보.
 모든 resolvers에 파라메터로 전달되어 request의 user 정보를 전달.
+
+currying
+authResolver(awesomeResolver);
+--> authResolver(async() => void);
+--> authResolverResult(parent, args, context, info);
