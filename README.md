@@ -63,14 +63,14 @@ User story
 ### Authentication(인증)
 
 - [x] JWT 생성
-- [ ] JWT 검증
+- [x] JWT 검증
 
 ---
 
 ### Private Resolvers:
 
 - [ ] Email 검증하기
-- [ ] 나의 profile 받기
+- [x] 나의 profile 받기
 - [ ] 나의 profile 수정
 - [ ] driving상태 변경
 - [ ] 나의 장소/방향 보고(report)하기
