@@ -16,8 +16,8 @@ const resolvers: Resolvers = {
         { req }
       ): Promise<CompleteEmailVerificationResponse> => {
         const user: User = req.user;
-        const { key } = args.key;
-        if (user.email) {
+        const { key } = args;
+        if (user.email && !user.verifiedEmail) {
           try {
             const verification = await Verification.findOne({
               key,
