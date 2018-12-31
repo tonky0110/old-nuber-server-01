@@ -8,7 +8,7 @@ import { Resolvers } from "../../../types/resolvers";
 import privateResolver from "../../../utils/privateResolver";
 
 const resolvers: Resolvers = {
-  Matation: {
+  Mutation: {
     DeletePlace: privateResolver(
       async (
         _,

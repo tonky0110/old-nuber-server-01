@@ -38,7 +38,7 @@ class User extends BaseEntity {
   @Column({ type: "int", nullable: true })
   age: number;
 
-  @Column({ type: "text", nullable: true })
+  @Column({ type: "varchar", length: 150, nullable: true })
   password: string;
 
   @Column({ type: "text", nullable: true })

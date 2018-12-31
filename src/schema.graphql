@@ -52,6 +52,19 @@ type EditPlaceResponse {
   error: String
 }
 
+type GetMyPlacesResponse {
+  ok: Boolean!
+  error: String
+  places: [Place]
+}
+
+type Query {
+  GetMyPlaces: GetMyPlacesResponse!
+  GetMyProfile: GetMyProfileResponse!
+  user: User
+  verification: Verification
+}
+
 type Place {
   id: Int!
   name: String!
@@ -120,12 +133,6 @@ type GetMyProfileResponse {
   ok: Boolean!
   error: String
   user: User
-}
-
-type Query {
-  GetMyProfile: GetMyProfileResponse!
-  user: User
-  verification: Verification
 }
 
 type ReportMovementResponse {
