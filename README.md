@@ -105,3 +105,8 @@ currying
 authResolver(awesomeResolver);
 --> authResolver(async() => void);
 --> authResolverResult(parent, args, context, info);
+
+typeORM
+Table의 relationship을 load하지 않음()
+불필요한 relation을 loading하지 않고, entities에서 FK를 등록하여 조회할 수 있음.
+--> resolver에서 조회 시 'relations'옵션을 주지 않고 대상 entity만 조회할 수 있음.
