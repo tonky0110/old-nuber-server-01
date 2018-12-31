@@ -72,11 +72,12 @@ User story
 - [x] Email 검증하기
 - [x] 나의 profile 받기
 - [x] 나의 profile 수정
-- [ ] 운전모드 전환(toggle driving mode)
-- [ ] report location(위치정보 보내기(계속-subscription))
-- [ ] 장소 추가하기
-- [ ] 장소 수정하기
-- [ ] 장소 삭제하기
+- [x] 운전모드 전환(toggle driving mode)
+- [x] report location(위치정보 보내기(계속-subscription))
+- [x] 장소 추가하기
+- [x] 장소 수정하기
+- [x] 장소 삭제하기
+- [ ] 내 (등록된)장소 찾기
 - [ ] 주변의 uber기사 보기
 - [ ] 주변의 uber기사 구독(위치 정보 받기)
 
