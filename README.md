@@ -111,4 +111,9 @@ typeORM
 Table의 relationship을 load하지 않음()
 불필요한 relation을 loading하지 않고, entities에서 FK를 등록하여 조회할 수 있음.
 --> resolver에서 조회 시 'relations'옵션을 주지 않고 대상 entity만 조회할 수 있음.
-ID: 1 -{"X-JWT":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTQ2MTczMTg1fQ.W6VDmZb8dC8Cvv35PcznAR5hJfqYEQRDy0GrVJ4a9oo"}
+ID: 1 -{"X-JWT":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTQ2MTczMTg1fQ.W6VDmZb8dC8Cvv35PcznAR5hJfqYEQRDy0GrVJ4a
+
+Subscription(구독)
+DB의 값이 변경되면 해당하는 정보를 SUBSCRIPTION하는 USER에서 자동으로 PUBLISH하는 기능.
+Redies, Memcashed같은 사용버전으로 사용할것.
+subscription은 HTTP가 아닌 WebSocket에서 실시간으로 만들어짐.
