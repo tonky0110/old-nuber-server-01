@@ -84,8 +84,10 @@ Ride story
 - [x] 주변의 uber기사 보기
 - [x] 주변의 uber기사 구독(위치 정보 받기)
 - [x] Ride(택시)요청
-- [ ] 주변의 Ride요청 받기(기사가)
-- [ ] 주변의 Ride요청 구독(기사가 호출 대기상태)
+- [x] 주변의 Ride요청 받기(기사가)
+- [x] 주변의 Ride요청 구독(기사가 호출 대기상태)
+- [ ] Ride 상태 변경(request --> accepted)
+- [ ] Ride조회(Get Ride)
 - [ ] Ride 상태 구독(요청자가 Ride요청이 accept되기를 기다리는 상태)
 - [ ] 채팅방 생성(chat room)
 - [ ] 채팅방 구독(새로운 메시지 push)
