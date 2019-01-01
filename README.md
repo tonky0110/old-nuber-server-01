@@ -118,3 +118,6 @@ DB의 값이 변경되면 해당하는 정보를 SUBSCRIPTION하는 USER에서 �
 Redies, Memcashed같은 사용버전으로 사용할것.
 subscription은 HTTP가 아닌 WebSocket에서 실시간으로 만들어짐.
 WebSocket인증: 인증을 한번하면, 서버가 해당 인증정보를 서버메모리에 저장하고 있음.
+
+default value 설정
+const { connection: { context = null } = {} } = req;
