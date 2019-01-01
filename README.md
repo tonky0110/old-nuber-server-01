@@ -81,9 +81,9 @@ User story
 
 Ride story
 
-- [ ] 주변의 uber기사 보기
-- [ ] 주변의 uber기사 구독(위치 정보 받기)
-- [ ] Ride(택시)요청
+- [x] 주변의 uber기사 보기
+- [x] 주변의 uber기사 구독(위치 정보 받기)
+- [x] Ride(택시)요청
 - [ ] 주변의 Ride요청 받기(기사가)
 - [ ] 주변의 Ride요청 구독(기사가 호출 대기상태)
 - [ ] Ride 상태 구독(요청자가 Ride요청이 accept되기를 기다리는 상태)
