@@ -61,6 +61,7 @@ type GetMyPlacesResponse {
 type Query {
   GetMyPlaces: GetMyPlacesResponse!
   GetMyProfile: GetMyProfileResponse!
+  GetNearByDrivers: GetNearByDriversResponse!
   user: User
   verification: Verification
 }
@@ -133,6 +134,12 @@ type GetMyProfileResponse {
   ok: Boolean!
   error: String
   user: User
+}
+
+type GetNearByDriversResponse {
+  ok: Boolean!
+  error: String
+  drivers: [User]
 }
 
 type ReportMovementResponse {
