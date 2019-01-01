@@ -61,7 +61,7 @@ type GetMyPlacesResponse {
 
 type Query {
   GetMyPlaces: GetMyPlacesResponse!
-  GetNearbyRides: GetNearbyRidesResponse!
+  GetNearbyRide: GetNearbyRideResponse!
   GetMyProfile: GetMyProfileResponse!
   GetNearByDrivers: GetNearByDriversResponse!
   user: User
@@ -81,10 +81,15 @@ type Place {
   updatedAt: String
 }
 
-type GetNearbyRidesResponse {
+type GetNearbyRideResponse {
   ok: Boolean!
   error: String
-  rides: [Ride]
+  ride: Ride
+}
+
+type Subscription {
+  NearbyRideSubscription: Ride
+  DriverSubscription: User
 }
 
 type RequestRideResponse {
@@ -124,10 +129,6 @@ type CompletePhoneVerificationResponse {
   ok: Boolean!
   error: String
   token: String
-}
-
-type Subscription {
-  DriverSubscription: User
 }
 
 type EmailSignInResponse {
