@@ -3,7 +3,7 @@ const resolvers = {
   Subscription: {
     DriverSubscription: {
       subscribe: (_, __, { pubSub }) => {
-        return pubSub.asyncIterator("driverUpdate");
+        return pubSub.asyncIterator("driverUpdate"); // 채널.
       }
     }
   }
