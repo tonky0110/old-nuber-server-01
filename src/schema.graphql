@@ -1,3 +1,20 @@
+type GetChatResponse {
+  ok: Boolean!
+  error: String
+  chat: Chat
+}
+
+type Query {
+  GetChat(chatId: Int!): GetChatResponse!
+  GetMyPlaces: GetMyPlacesResponse!
+  GetNearbyRide: GetNearbyRideResponse!
+  GetRide(rideId: Int!): GetRideResponse!
+  GetMyProfile: GetMyProfileResponse!
+  GetNearByDrivers: GetNearByDriversResponse!
+  user: User
+  verification: Verification
+}
+
 type Chat {
   id: Int!
   messages: [Message]
@@ -60,16 +77,6 @@ type GetMyPlacesResponse {
   places: [Place]
 }
 
-type Query {
-  GetMyPlaces: GetMyPlacesResponse!
-  GetNearbyRide: GetNearbyRideResponse!
-  GetRide(rideId: Int!): GetRideResponse!
-  GetMyProfile: GetMyProfileResponse!
-  GetNearByDrivers: GetNearByDriversResponse!
-  user: User
-  verification: Verification
-}
-
 type Place {
   id: Int!
   name: String!
@@ -97,6 +104,7 @@ type GetRideResponse {
 
 type Subscription {
   NearbyRideSubscription: Ride
+  RideStatusSubscription: Ride
   DriverSubscription: User
 }
 
