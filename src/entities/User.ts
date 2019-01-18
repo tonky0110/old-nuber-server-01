@@ -2,8 +2,6 @@ import bcrypt from "bcrypt";
 import { IsEmail } from "class-validator";
 import {
   BaseEntity,
-  BeforeInsert,
-  BeforeUpdate,
   Column,
   CreateDateColumn,
   Entity,
@@ -15,8 +13,6 @@ import Chat from "./Chat";
 import Message from "./Message";
 import Place from "./Place";
 import Ride from "./Ride";
-
-const BCRYPT_ROUNDS = 10;
 
 @Entity()
 class User extends BaseEntity {
@@ -98,28 +94,7 @@ class User extends BaseEntity {
   }
 
   public comparePassword(password: string): Promise<boolean> {
-    console.log(
-      "comparePassword - ",
-      "input password:",
-      password,
-      ", saved password:",
-      this.password
-    );
     return bcrypt.compare(password, this.password);
-  }
-
-  @BeforeInsert()
-  @BeforeUpdate()
-  async savePassword(): Promise<void> {
-    console.log("this.password:", this.password);
-    if (this.password) {
-      const hashedPassword = await this.hashPassword(this.password);
-      this.password = hashedPassword;
-    }
-  }
-
-  private hashPassword(password: string): Promise<string> {
-    return bcrypt.hash(password, BCRYPT_ROUNDS);
   }
 }
 

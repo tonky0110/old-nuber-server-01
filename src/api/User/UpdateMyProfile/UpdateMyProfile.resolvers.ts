@@ -5,6 +5,7 @@ import {
 } from "../../../types/graph";
 import { Resolvers } from "../../../types/resolvers";
 import cleanNullArgs from "../../../utils/cleanNullArgs";
+import encryptPassword from "../../../utils/encryptPassword";
 import privateResolver from "../../../utils/privateResolver";
 
 const resolvers: Resolvers = {
@@ -17,8 +18,8 @@ const resolvers: Resolvers = {
       ): Promise<UpdateMyProfileResponse> => {
         const user: User = req.user;
         const notNull: any = cleanNullArgs(args);
-        if (notNull.password !== null) {
-          user.password = notNull.password;
+        if (notNull.password) {
+          user.password = await encryptPassword(notNull.password);
           user.save();
           delete notNull.password;
         }
